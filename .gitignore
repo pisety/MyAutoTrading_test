@@ -1,0 +1,31 @@
+# Root .gitignore for MyAutoTrading
+
+# Temporary patch & test files
+*.patch
+*.diff
+test_yf.py
+AutoTradingApp/modify*.py
+AutoTradingApp/patch*.py
+AutoTradingApp/split*.py
+
+# Large backtest datasets
+py-my-auto-trading/data/
+
+# Temporary scratch scripts in py-my-auto-trading
+py-my-auto-trading/check_*.py
+py-my-auto-trading/fix_*.py
+py-my-auto-trading/test_*.py
+py-my-auto-trading/migrate_*.py
+py-my-auto-trading/temp_*.py
+py-my-auto-trading/fetch.py
+py-my-auto-trading/get_soxx.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+*.key
+*.pem

@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Keys and Secrets
+*.json
+!keys_template.json
+!google-services_template.json
+*.key
+*.pem
+oracle/key/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Deployment scripts (contain server IP)
+deploy.bat
+server.bat
+
+# Patch scripts (temporary)
+patch*.py

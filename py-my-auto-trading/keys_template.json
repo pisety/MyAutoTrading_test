@@ -1,0 +1,11 @@
+{
+    "stock": {
+        "app_key": "YOUR_KOREA_INVESTMENT_APP_KEY",
+        "app_secret": "YOUR_KOREA_INVESTMENT_APP_SECRET",
+        "account_no": "12345678-01"
+    },
+    "crypto": {
+        "access_key": "YOUR_UPBIT_ACCESS_KEY",
+        "secret_key": "YOUR_UPBIT_SECRET_KEY"
+    }
+}

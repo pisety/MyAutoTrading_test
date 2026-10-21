@@ -51,7 +51,7 @@ flowchart TD
    - 앱은 해당 내용을 JSON 포맷으로 직렬화하여 Firebase에 덮어씁니다.
    - Python 엔진은 Firebase의 `db.reference('/settings').listen()` 리스너를 통해 변경 이벤트를 실시간(0.1초 이내)으로 수신하고 내부 설정값(`user_session.py`)을 갱신합니다.
 2. **시세 및 계좌 반영 (Python ➡️ Firebase ➡️ App):**
-   - Python 엔진의 백그라운드 태스크가 업비트/한국투자증권 API를 지속적으로 호출하여 현재 가격, 총 자산, 보유 주식 수 등을 가져옵니다.
+   - Python 엔진의 백그라운드 태스크가 업비트/한국투자증권/메리츠증권/키움증권 API를 지속적으로 호출하여 현재 가격, 총 자산, 보유 주식 수 등을 가져옵니다.
    - 주기적으로 Firebase의 `/status` 경로에 덮어씁니다.
    - Android 앱은 `/status` 경로의 `addValueEventListener`를 통해 상태를 즉시 넘겨받아 화면(Compose)을 다시 그립니다(Recomposition).
 
@@ -173,4 +173,5 @@ flowchart TD
 - **새로운 설정 필드 추가 시:** 안드로이드의 `TradingModels.kt`와 파이썬의 `schemas.py` 양쪽에 동시에 새로운 변수(Property)를 추가해야 Firebase 직렬화/역직렬화 시 에러가 나지 않습니다.
 - **토큰 캐싱:** KIS와 키움증권 모두 Access Token을 로컬 파일에 캐싱합니다. 계좌 전환 시 불필요한 재인증(1분+ 지연)을 방지하기 위한 핵심 최적화입니다.
 - **키 관리:** 절대 GitHub나 외부에 `keys.json`, `google-services.json`의 원본 데이터를 올리지 마세요. 템플릿 파일 구조만 유지합니다.
+
 
